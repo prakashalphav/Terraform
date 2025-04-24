@@ -30,6 +30,13 @@ resource "aws_vpc" "main" {
   
 }
 
+resource "aws_subnet" "public" {
+    count = 1
+    vpc_id = aws_vpc.main.id
+    # cidr_block = element()
+    availability_zone = element(data.aws_availability_zones.az,count.index)
+  
+}
 resource "aws_instance" "public" {
     ami = data.aws_ami.ami.id
     instance_type = "t3.medium"
