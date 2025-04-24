@@ -2,3 +2,4 @@ aws/awscliv2.zip
 aws/cal/
 aws/*
 .terraform/*
+awscliv2.zip
